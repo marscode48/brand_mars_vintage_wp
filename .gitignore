@@ -1,0 +1,22 @@
+# ルートディレクトリ直下ファイルを除外
+/*.*
+ 
+# ルートディレクトリ直下ファイルの許可
+!.gitignore
+ 
+# WordPressコアデータを完全除外
+/wp-admin/
+/wp-includes/
+ 
+# ディレクトリ内に許可データありの除外
+/wp-content/*
+/wp-content/themes/*
+ 
+# 除外したディレクトリの一部を許可
+!/wp-content/themes/
+!/wp-content/themes/mv/
+ 
+# WordPressテーマ内の管理外データを完全除外
+/wp-content/themes/mv/backup/
+/wp-content/themes/mv/data/
+/wp-content/themes/mv/img/
