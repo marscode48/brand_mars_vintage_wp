@@ -2,3 +2,17 @@
 /*
 Theme Name: mv
 */
+
+@import 'styles/modules/variables';
+@import 'styles/modules/mixin';
+@import 'styles/modules/appear';
+@import 'styles/modules/button';
+@import 'styles/modules/hero-slider';
+@import 'styles/modules/text-animation';
+@import 'styles/modules/fade-slide';
+@import 'styles/modules/image-slide';
+@import "styles/breakpoints/base";
+
+@media (max-width: 900px) {
+  @import "styles/breakpoints/900min";
+}
