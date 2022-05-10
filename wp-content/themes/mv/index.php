@@ -1,1 +1,1 @@
-helloworld
+<?php get_header(); ?>
