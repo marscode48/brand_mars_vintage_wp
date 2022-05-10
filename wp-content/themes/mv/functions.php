@@ -6,8 +6,9 @@ CSSファイルの読み込み
 **************************************************/
 function my_enqueue_styles() {
   wp_enqueue_style('ress', '//unpkg.com/ress/dist/ress.min.css', array(), false, 'all');
-  wp_enqueue_style('swiper', get_stylesheet_uri('/styles/vendors/swiper.min.css'), array('ress'), false, 'all');
-  wp_enqueue_style('style', get_stylesheet_uri('/styles/style.css'), array('ress'), false, 'all');
+  wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap', false);
+  wp_enqueue_style('swiper', get_theme_file_uri('/styles/vendors/swiper.min.css'), array(), false, 'all');
+  wp_enqueue_style('style', get_stylesheet_uri(), array('ress'), false, 'all');
 }
 add_action('wp_enqueue_scripts', 'my_enqueue_styles');
 
