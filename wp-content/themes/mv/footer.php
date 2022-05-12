@@ -1,7 +1,7 @@
 <footer id="footer" class="footer appear up">
       <div class="footer__inner">
         <div class="footer__logo item">
-          <a href="#"><img src="images/logo.png" alt="Mars Vintage">
+          <a href="#"><img src="<?php echo esc_url(get_theme_file_uri('/images/logo.png')); ?>" alt="Mars Vintage">
           </a>
         </div>
         <nav class="footer__nav">

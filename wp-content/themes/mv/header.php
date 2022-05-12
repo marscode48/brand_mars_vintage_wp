@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title><?php echo bloginfo('name'); ?></title>
     <meta name="description" content="<?php bloginfo('description'); ?>">
-    <link rel="icon" href="<?php echo esc_url(get_theme_file_uri('images/favicon.ico')); ?>">
+    <link rel="icon" href="<?php echo esc_url(get_theme_file_uri('/images/favicon.ico')); ?>">
 
     <?php wp_head(); ?>
   </head>
@@ -17,14 +17,14 @@
       <div class="header__inner appear up">
         <h1 class="site-title item">
           <a href="<?php echo esc_url(home_url()); ?>">
-            <img src="<?php echo esc_url(get_theme_file_uri('images/logo.png')); ?>" alt="Mars Vintage">
+            <img src="<?php echo esc_url(get_theme_file_uri('/images/logo.png')); ?>" alt="Mars Vintage">
           </a>
         </h1>
         <nav class="header__nav">
   
           <!-- Mobile -->
           <div class="mobile-logo">
-            <img src="<?php echo esc_url(get_theme_file_uri('images/logo.png')); ?>" alt="Mars Vintage">
+            <img src="<?php echo esc_url(get_theme_file_uri('/images/logo.png')); ?>" alt="Mars Vintage">
           </div>
           <ul class="mobile-ul">
             <li><a href="<?php echo esc_url(home_url('/category/products/')); ?>">PRODUCTS</a></li>

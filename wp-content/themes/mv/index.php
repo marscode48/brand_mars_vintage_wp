@@ -3,9 +3,9 @@
 <main class="main">
   <!-- メインビジュアル -->
   <div class="mainvisual">
-    <img src="<?php echo esc_url(get_theme_file_uri('images/mainvisual1.jpg')); ?>" alt="" class="fade-slide">
-    <img src="<?php echo esc_url(get_theme_file_uri('images/mainvisual2.jpg')); ?>" alt="" class="fade-slide">
-    <img src="<?php echo esc_url(get_theme_file_uri('images/mainvisual3.jpg')); ?>" alt="" class="fade-slide">
+    <img src="<?php echo esc_url(get_theme_file_uri('/images/mainvisual1.jpg')); ?>" alt="" class="fade-slide">
+    <img src="<?php echo esc_url(get_theme_file_uri('/images/mainvisual2.jpg')); ?>" alt="" class="fade-slide">
+    <img src="<?php echo esc_url(get_theme_file_uri('/images/mainvisual3.jpg')); ?>" alt="" class="fade-slide">
   </div>
 
 
@@ -16,15 +16,15 @@
     <!-- swiper.js-->
     <div class="swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('images/newarrival1.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
-        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('images/newarrival2.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
-        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('images/newarrival3.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
-        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('images/newarrival4.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
-        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('images/newarrival5.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
-        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('images/newarrival6.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
-        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('images/newarrival7.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
-        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('images/newarrival8.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
-        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('images/newarrival9.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
+        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('/images/newarrival1.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
+        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('/images/newarrival2.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
+        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('/images/newarrival3.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
+        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('/images/newarrival4.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
+        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('/images/newarrival5.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
+        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('/images/newarrival6.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
+        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('/images/newarrival7.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
+        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('/images/newarrival8.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
+        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('/images/newarrival9.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
       </div>
     </div>
   </section>
@@ -32,6 +32,7 @@
   <!-- Products -->
   <section id="products" class="products">
     <h2 class="sec-title tween-animate-title">PRODUCTS</h2>
+
     <div class="products__grid">
       <div class="products__item">
         <a href="article1.html">
