@@ -34,125 +34,36 @@
     <h2 class="sec-title tween-animate-title">PRODUCTS</h2>
 
     <div class="products__grid">
-      <div class="products__item">
-        <a href="article1.html">
-          <div class="cover-slide hover-darken">
-            <img class="img-zoom" src="images/item1.jpg" alt="">
-          </div>
-          <div class="products__content">
-            <p class="products__category">category</p>
-            <p class="products__text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-            <p class="products__date">XXXX.XX.XX</p>
-          </div>
-        </a>
-      </div>
-
-      <div class="products__item">
-        <a href="article2.html">
-          <div class="cover-slide hover-darken">
-            <img class="img-zoom" src="images/item2.jpg" alt="">
-          </div>
-          <div class="products__content">
-            <p class="products__category">category</p>
-            <p class="products__text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-            <p class="products__date">XXXX.XX.XX</p>
-          </div>
-        </a>
-      </div>
-
-      <div class="products__item">
-        <a href="article3.html">
-          <div class="cover-slide hover-darken">
-            <img class="img-zoom" src="images/item3.jpg" alt="">
-          </div>
-          <div class="products__content">
-            <p class="products__category">category</p>
-            <p class="products__text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-            <p class="products__date">XXXX.XX.XX</p>
-          </div>
-        </a>
-      </div>
-
-      <div class="products__item">
-        <a href="article4.html">
-          <div class="cover-slide hover-darken">
-            <img class="img-zoom" src="images/item4.jpg" alt="">
-          </div>
-          <div class="products__content">
-            <p class="products__category">category</p>
-            <p class="products__text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-            <p class="products__date">XXXX.XX.XX</p>
-          </div>
-        </a>
-      </div>
-
-      <div class="products__item">
-        <a href="article5.html">
-          <div class="cover-slide hover-darken">
-            <img class="img-zoom" src="images/item5.jpg" alt="">
-          </div>
-          <div class="products__content">
-            <p class="products__category">category</p>
-            <p class="products__text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-            <p class="products__date">XXXX.XX.XX</p>
-          </div>
-        </a>
-      </div>
-
-      <div class="products__item">
-        <a href="article6.html">
-          <div class="cover-slide hover-darken">
-            <img class="img-zoom" src="images/item6.jpg" alt="">
-          </div>
-          <div class="products__content">
-            <p class="products__category">category</p>
-            <p class="products__text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-            <p class="products__date">XXXX.XX.XX</p>
-          </div>
-        </a>
-      </div>
-
-      <div class="products__item">
-        <a href="article7.html">
-          <div class="cover-slide hover-darken">
-            <img class="img-zoom" src="images/item7.jpg" alt="">
-          </div>
-          <div class="products__content">
-            <p class="products__category">category</p>
-            <p class="products__text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-            <p class="products__date">XXXX.XX.XX</p>
-          </div>
-        </a>
-      </div>
-
-      <div class="products__item">
-        <a href="article8.html">
-          <div class="cover-slide hover-darken">
-            <img class="img-zoom" src="images/item8.jpg" alt="">
-          </div>
-          <div class="products__content">
-            <p class="products__category">category</p>
-            <p class="products__text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-            <p class="products__date">XXXX.XX.XX</p>
-          </div>
-        </a>
-      </div>
-
-      <div class="products__item">
-        <a href="article9.html">
-          <div class="cover-slide hover-darken">
-            <img class="img-zoom" src="images/item9.jpg" alt="">
-          </div>
-          <div class="products__content">
-            <p class="products__category">category</p>
-            <p class="products__text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-            <p class="products__date">XXXX.XX.XX</p>
-          </div>
-        </a>
-      </div>
+      <?php
+        $args = array(
+          'posts_per_page' => 9
+        );
+      ?>
+      <?php $posts = get_posts($args); ?>
+      <?php foreach($posts as $post): ?>
+        <?php setup_postdata($post); ?>
+        <?php
+          $cat = get_the_category();
+          $catname = $cat[0]->cat_name;
+        ?>
+        <div class="products__item">
+          <a href="<?php the_permalink(); ?>">
+            <div class="cover-slide hover-darken">
+              <img class="img-zoom" src="<?php the_post_thumbnail_url('full'); ?>" alt="">
+            </div>
+            <div class="products__content">
+              <p class="products__category"><?php echo $catname; ?></p>
+              <p class="products__title"><?php the_title(); ?></p>
+              <p class="products__price">&yen;<?php echo esc_html(number_format(get_post_meta($post->ID, 'price', true))); ?> +tax</p>
+            </div>
+          </a>
+        </div>
+      <?php endforeach; ?>
+      <?php wp_reset_postdata(); ?>
     </div>
+
     <div class="products__btn appear up">
-      <a href="products.html">
+      <a href="<?php echo esc_url(home_url('/category/products/')); ?>">
         <button class="btn cover-3d item">
           <span>
             View More
