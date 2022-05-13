@@ -1,4 +1,6 @@
 <?php
+
+add_theme_support('post-thumbnails');
 // キャッシュ対策する
 
 /**************************************************
@@ -26,3 +28,4 @@ function st_enqueue_scripts() {
   wp_enqueue_script('main', get_theme_file_uri('/scripts/main.js'), array(), false, true);
 }
 add_action('wp_enqueue_scripts', 'st_enqueue_scripts');
+
