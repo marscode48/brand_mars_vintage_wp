@@ -224,12 +224,13 @@ Products
     margin-bottom: 20px;
   }
 
-  &__text {
+  &__title {
+    font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 20px;
   }
 
-  &__date {
+  &__price {
     font-size: 0.75rem;
     text-align: right;
   }
