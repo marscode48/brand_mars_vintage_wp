@@ -213,6 +213,7 @@ Products
 
   & img {
     vertical-align: top;
+    width: 100%;
   }
 
   &__content {
@@ -240,25 +241,32 @@ Products
     margin: 50px 0;
   }
 
-  &__pagination {
-    display: flex;
-    justify-content: center;
-    margin: 50px 0;
-    
-    & li {
-      width: 35px;
-      height: 35px;
-      line-height: 35px;
-      font-size: 1.25rem;
-      border: 1px solid $cBlack;
-      border-radius: 50%;
-      text-align: center;
-      margin: 0 10px;
-    }
+  .pagination {
+    & ul {
+      display: flex;
+      justify-content: center;
+      margin: 50px 0;
 
-    & .current {
-      background-color: $cBlack;
-      color: $cWhite;
+      & li {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 1.25rem;
+        border: 1px solid $cBlack;
+        border-radius: 50%;
+        text-align: center;
+        margin: 0 10px;
+
+        &.active {
+          background-color: $cBlack;
+          color: $cWhite;
+        }
+
+        &.next, &.prev {
+          border: none;
+          width: 75px;
+        }
+      }
     }
   }
 }

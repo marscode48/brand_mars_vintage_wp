@@ -1042,6 +1042,7 @@ Products
 
 .products img {
   vertical-align: top;
+  width: 100%;
 }
 
 .products__content {
@@ -1069,7 +1070,7 @@ Products
   margin: 50px 0;
 }
 
-.products__pagination {
+.products .pagination ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1079,7 +1080,7 @@ Products
   margin: 50px 0;
 }
 
-.products__pagination li {
+.products .pagination ul li {
   width: 35px;
   height: 35px;
   line-height: 35px;
@@ -1090,9 +1091,14 @@ Products
   margin: 0 10px;
 }
 
-.products__pagination .current {
+.products .pagination ul li.active {
   background-color: black;
   color: #fff;
+}
+
+.products .pagination ul li.next, .products .pagination ul li.prev {
+  border: none;
+  width: 75px;
 }
 
 /*-------------------------------------------
