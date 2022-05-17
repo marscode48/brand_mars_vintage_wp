@@ -1,6 +1,20 @@
 <?php
 
 add_theme_support('post-thumbnails');
+
+// タイトルタグを出力
+function setup_my_theme() {
+  add_theme_support('title-tag');
+}
+add_action( 'after_setup_theme', 'setup_my_theme');
+
+// タイトルを区切り文字に書き換え
+function rewrite_separator($separator) {
+  $separator = '|';
+  return $separator;
+}
+add_filter('document_title_separator', 'rewrite_separator');
+
 // キャッシュ対策する
 
 /**************************************************
