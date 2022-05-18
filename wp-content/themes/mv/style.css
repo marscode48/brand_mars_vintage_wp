@@ -833,13 +833,13 @@ li {
 }
 
 /* 共通クラス */
-.wrapper, .header__inner, .products, .article, .about, .company, .footer {
+.wrapper, .header__inner, .products, .article, .page, .footer {
   width: 90%;
   margin: 0 auto;
   max-width: 1240px;
 }
 
-.inner, .article__inner, .about__inner, .company__inner {
+.inner, .article__inner, .page__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1146,25 +1146,25 @@ Article
 /*-------------------------------------------
 About, Company
 -------------------------------------------*/
-.about__img, .company__img {
+.page__img {
   width: 50%;
 }
 
-.about__img img, .company__img img {
+.page__img img {
   vertical-align: bottom;
 }
 
-.about__text, .company__text {
+.page__text {
   width: 50%;
   padding: 0 8%;
 }
 
-.about__text .page-title, .company__text .page-title {
+.page__text .page-title {
   position: relative;
   margin-bottom: 0;
 }
 
-.about__text .page-title::before, .company__text .page-title::before {
+.page__text .page-title::before {
   display: block;
   content: "";
   position: absolute;
@@ -1183,12 +1183,12 @@ About, Company
           transform-origin: right;
 }
 
-.about__text .ja, .company__text .ja {
+.page__text .ja {
   display: inline-block;
   margin-bottom: 25px;
 }
 
-.about__text.inview .page-title::before, .company__text.inview .page-title::before {
+.page__text.inview .page-title::before {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
@@ -1198,7 +1198,7 @@ About, Company
   text-align: justify;
 }
 
-.company__dl {
+.company dl {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1207,32 +1207,32 @@ About, Company
   margin-bottom: 20px;
 }
 
-.company__dl dt {
+.company dl dt {
   width: 30%;
   border-bottom: solid 1px #dcdbdb;
   padding: 20px 10px;
 }
 
-.company__dl dt:last-of-type {
+.company dl dt:last-of-type {
   border-bottom: none;
 }
 
-.company__dl dd {
+.company dl dd {
   width: 70%;
   border-bottom: solid 1px #dcdbdb;
   padding: 20px 10px;
 }
 
-.company__dl dd:last-of-type {
+.company dl dd:last-of-type {
   border-bottom: none;
 }
 
-.company__map {
+.map {
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
 }
 
-.company__map iframe {
+.map iframe {
   width: 100%;
   height: 300px;
   border: 0;
@@ -1479,28 +1479,28 @@ Footer
   /*-------------------------------------------
   About, Company
   -------------------------------------------*/
-  .about__inner, .company__inner {
+  .page__inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .about__img, .company__img {
+  .page__img {
     width: 100%;
     margin-bottom: 30px;
   }
-  .about__text, .company__text {
+  .page__text {
     width: 100%;
     padding: 0%;
   }
-  .about__text .page-title, .company__text .page-title {
+  .page__text .page-title {
     font-size: 1.75rem;
     text-align: center;
   }
-  .about__text .page-title::before, .company__text .page-title::before {
+  .page__text .page-title::before {
     display: none;
   }
-  .about__text .ja, .company__text .ja {
+  .page__text .ja {
     display: block;
     text-align: center;
   }
