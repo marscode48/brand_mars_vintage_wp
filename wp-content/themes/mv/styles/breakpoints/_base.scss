@@ -417,6 +417,65 @@ About, Company
 
 
 /*-------------------------------------------
+contact form
+-------------------------------------------*/
+.contact {
+  @extend .wrapper;
+
+  & {
+    .page-title {
+      text-align: center;
+    }
+
+    input, textarea {
+      width: 100%;
+      border: solid 1px $cBlack;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+      padding: 15px 0;
+      position: relative;
+      display: inline-block;
+      background-color: $cWhite;
+      border: 1px solid $cBlack;
+      font-weight: 600;
+      padding: 15px 0;
+      cursor: pointer;
+      transition: all 0.3s;
+      color: $cBlack;
+      text-decoration: none !important;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: $cBlack;
+      color: $cWhite;
+      box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .wpcf7-not-valid-tip {
+      margin-bottom: 10px !important;
+    }
+
+    .wpcf7-spinner {
+      display: none !important;
+    }
+
+    .wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output {
+      color: #dc3232 !important;
+    }
+
+    .wpcf7 form .wpcf7-response-output {
+      border: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+}
+
+
+/*-------------------------------------------
 Footer
 -------------------------------------------*/
 .footer {
