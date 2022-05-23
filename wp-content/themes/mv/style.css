@@ -1123,12 +1123,24 @@ Article
   text-align: justify;
 }
 
+.article__cat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.article__cat span {
+  margin: 0 5px;
+}
+
 .article__dl {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-bottom: 60px;
 }
 
 .article__dl dt {
@@ -1137,6 +1149,24 @@ Article
 
 .article__dl dd {
   width: 70%;
+}
+
+.article__nav {
+  position: relative;
+}
+
+.article__nav a {
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+}
+
+.article__nav .prev-link {
+  right: 30px;
+}
+
+.article__nav .next-link {
+  left: 30px;
 }
 
 .article__btn {

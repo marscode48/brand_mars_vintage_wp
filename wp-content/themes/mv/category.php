@@ -8,6 +8,10 @@
     <div class="products__grid">
       <?php if(have_posts()): ?>
         <?php while(have_posts()):the_post(); ?>
+          <?php
+          $cat = get_the_category();
+          $catname = $cat[1]->cat_name;
+          ?>
           <div class="products__item">
             <a href="<?php the_permalink(); ?>">
               <div class="cover-slide hover-darken">

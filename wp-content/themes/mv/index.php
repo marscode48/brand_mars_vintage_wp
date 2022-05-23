@@ -44,7 +44,7 @@
         <?php setup_postdata($post); ?>
         <?php
           $cat = get_the_category();
-          $catname = $cat[0]->cat_name;
+          $catname = $cat[1]->cat_name;
         ?>
         <div class="products__item">
           <a href="<?php the_permalink(); ?>">

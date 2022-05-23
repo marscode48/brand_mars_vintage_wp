@@ -299,9 +299,19 @@ Article
     }
   }
 
+  &__cat {
+    display: flex;
+    margin-bottom: 15px;
+
+    & span {
+      margin: 0 5px;
+    }
+  }
+
   &__dl {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 60px;
 
     & dt {
       width: 30%;
@@ -309,6 +319,24 @@ Article
     
     & dd {
       width: 70%;
+    }
+  }
+
+  &__nav {
+    position: relative;
+
+    & a {
+      font-weight: bold;
+      position: absolute;
+      top: 0;
+    }
+
+    & .prev-link {
+      right: 30px;
+    }
+    
+    & .next-link {
+      left: 30px;
     }
   }
 
