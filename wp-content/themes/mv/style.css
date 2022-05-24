@@ -1162,11 +1162,11 @@ Article
 }
 
 .article__nav .prev-link {
-  right: 30px;
+  right: 0px;
 }
 
 .article__nav .next-link {
-  left: 30px;
+  left: 0px;
 }
 
 .article__btn {
@@ -1559,6 +1559,12 @@ Footer
   }
   .article__text .page-title {
     font-size: 1.5rem;
+  }
+  .article__nav .prev-link {
+    right: 30px;
+  }
+  .article__nav .next-link {
+    left: 30px;
   }
   /*-------------------------------------------
   About, Company
