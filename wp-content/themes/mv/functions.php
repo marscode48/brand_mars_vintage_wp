@@ -1,21 +1,14 @@
 <?php
 
-add_theme_support('post-thumbnails');
-
-// タイトルタグを出力
+/**************************************************
+タイトルタグ、サムネイル画像を出力
+**************************************************/ 
 function setup_my_theme() {
   add_theme_support('title-tag');
+  add_theme_support('post-thumbnails');
+
 }
 add_action( 'after_setup_theme', 'setup_my_theme');
-
-// タイトルを区切り文字に書き換え
-function rewrite_separator($separator) {
-  $separator = '|';
-  return $separator;
-}
-add_filter('document_title_separator', 'rewrite_separator');
-
-// キャッシュ対策する
 
 /**************************************************
 CSSファイルの読み込み
@@ -42,6 +35,15 @@ function st_enqueue_scripts() {
   wp_enqueue_script('main', get_theme_file_uri('/scripts/main.js'), array(), false, true);
 }
 add_action('wp_enqueue_scripts', 'st_enqueue_scripts');
+
+/**************************************************
+タイトルを区切り文字に書き換え
+**************************************************/
+function rewrite_separator($separator) {
+  $separator = '|';
+  return $separator;
+}
+add_filter('document_title_separator', 'rewrite_separator');
 
 /**************************************************
 ページネーション
