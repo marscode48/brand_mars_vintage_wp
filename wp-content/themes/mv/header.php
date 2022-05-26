@@ -26,7 +26,7 @@
             <img src="<?php echo esc_url(get_theme_file_uri('/images/logo.png')); ?>" alt="Mars Vintage">
           </div>
           <ul class="mobile-ul">
-            <li><a href="<?php echo esc_url(home_url('/category/products/')); ?>">PRODUCTS</a></li>
+            <li><a href="<?php echo esc_url(home_url('/products/')); ?>">PRODUCTS</a></li>
             <li><a href="<?php echo esc_url(home_url('/about/')); ?>">ABOUT</a></li>
             <li><a href="<?php echo esc_url(home_url('/company/')); ?>">COMPANY</a></li>
             <li><a href="<?php echo esc_url(home_url('/contact/')); ?>">CONTACT</a></li>
@@ -39,7 +39,7 @@
   
           <!-- Desktop -->
           <ul class="header__ul">
-            <li class="item"><a href="<?php echo esc_url(home_url('/category/products/')); ?>">PRODUCTS</a></li>
+            <li class="item"><a href="<?php echo esc_url(home_url('/products/')); ?>">PRODUCTS</a></li>
             <li class="item"><a href="<?php echo esc_url(home_url('/about/')); ?>">ABOUT</a></li>
             <li class="item"><a href="<?php echo esc_url(home_url('/company/')); ?>">COMPANY</a></li>
             <li class="item"><a href="<?php echo esc_url(home_url('/contact/')); ?>">CONTACT</a></li>

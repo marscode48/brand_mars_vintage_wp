@@ -6,7 +6,7 @@
         </div>
         <nav class="footer__nav">
           <ul class="footer__ul">
-            <li class="item"><a href="<?php echo esc_url(home_url('/category/products/')); ?>">PRODUCTS</a></li>
+            <li class="item"><a href="<?php echo esc_url(home_url('/products/')); ?>">PRODUCTS</a></li>
             <li class="item"><a href="<?php echo esc_url(home_url('/about/')); ?>">ABOUT</a></li>
             <li class="item"><a href="<?php echo esc_url(home_url('/company/')); ?>">COMPANY</a></li>
             <li class="item"><a href="<?php echo esc_url(home_url('/contact/')); ?>">CONTACT</a></li>
