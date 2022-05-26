@@ -6,9 +6,40 @@
 function setup_my_theme() {
   add_theme_support('title-tag');
   add_theme_support('post-thumbnails');
-
 }
 add_action( 'after_setup_theme', 'setup_my_theme');
+
+/**************************************************
+カスタム投稿タイプの追加
+**************************************************/
+function add_custom_post_type() {
+  register_post_type('products', [
+    'label' => 'PRODUCTS',
+    'public' => true,
+    'has_archive' => true,
+    'menu_position' => 5,
+    'menu_icon' => 'dashicons-store',
+    'show_in_rest' => true,
+    'supports' => ['thumbnail', 'title', 'editor']
+    ]
+  );
+}
+add_action('init', 'add_custom_post_type');
+
+/**************************************************
+カスタムタクソノミーの追加
+**************************************************/
+function add_custom_taxonomy() {
+  register_taxonomy('genre', 'products', [
+    'label' => 'カテゴリー',
+    'hierarchical' => true,
+    'show_in_rest' => true,
+    // 'rewrite' => array('slug' => 'products'),
+    ]
+  );
+}
+add_action('init', 'add_custom_taxonomy');
+
 
 /**************************************************
 CSSファイルの読み込み
