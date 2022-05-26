@@ -36,23 +36,23 @@
     <div class="products__grid">
       <?php
         $args = array(
+          'post_type' => 'products',
           'posts_per_page' => 9
         );
       ?>
       <?php $posts = get_posts($args); ?>
       <?php foreach($posts as $post): ?>
         <?php setup_postdata($post); ?>
-        <?php
-          $cat = get_the_category();
-          $catname = $cat[1]->cat_name;
-        ?>
+        <?php $term = get_the_terms($post->ID, 'genre'); ?>
         <div class="products__item">
           <a href="<?php the_permalink(); ?>">
             <div class="cover-slide hover-darken">
               <img class="img-zoom" src="<?php the_post_thumbnail_url('full'); ?>" alt="">
             </div>
             <div class="products__content">
-              <p class="products__category"><?php echo $catname; ?></p>
+              <?php if($term): ?>
+              <p class="products__category"><?php echo esc_html($term[0]->name); ?></p>
+              <?php endif; ?>
               <p class="products__title"><?php the_title(); ?></p>
               <p class="products__price">&yen;<?php echo esc_html(number_format(get_post_meta($post->ID, 'price', true))); ?> +tax</p>
             </div>
@@ -63,7 +63,7 @@
     </div>
 
     <div class="products__btn appear up">
-      <a href="<?php echo esc_url(home_url('/category/products/')); ?>">
+      <a href="<?php echo esc_url(home_url('/products/')); ?>">
         <button class="btn cover-3d item">
           <span>
             View More
