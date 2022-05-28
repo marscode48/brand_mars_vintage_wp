@@ -180,6 +180,12 @@
       text-align: center;
       margin: 30px 0;
     }
+
+    .pagination {
+      & ul li {
+        margin: 0 10px;
+      }
+    }
   }
 
   /*-------------------------------------------

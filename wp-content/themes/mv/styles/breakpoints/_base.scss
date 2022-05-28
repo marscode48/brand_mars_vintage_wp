@@ -244,29 +244,22 @@ Products
   }
 
   .pagination {
+    margin-top: 80px;
+
     & ul {
       display: flex;
       justify-content: center;
-      margin: 50px 0;
 
       & li {
-        width: 35px;
-        height: 35px;
-        line-height: 35px;
         font-size: 1.25rem;
-        border: 1px solid $cBlack;
-        border-radius: 50%;
-        text-align: center;
-        margin: 0 10px;
-
-        &.active {
-          background-color: $cBlack;
-          color: $cWhite;
+        margin: 0 20px;
+        
+        & a {
+          display: block;
         }
-
-        &.next, &.prev {
-          border: none;
-          width: 75px;
+        
+        &.active {
+          border-bottom: 1px solid $cBlack;
         }
       }
     }

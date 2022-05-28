@@ -105,10 +105,10 @@ function pagination($pages = '', $range = 2) {
     if($paged > 1) {
       echo '<li class="prev item"><a href="' . esc_url(get_pagenum_link($paged - 1)) . '">BACK</a></li>';
     }
-
+    
     // ページ番号を表示（現在のページはリンクにしない）
-    for ($i=1; $i <= $pages; $i++) {
-      if (1 != $pages &&(!($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )) {
+    for ($i = 1; $i <= $pages; $i++) {
+      if (1 != $pages &&(!($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems )) {
         if ($paged == $i) {
           echo '<li class="active item">' .$i. '</li>';
         } else {
