@@ -8,7 +8,6 @@
     <img src="<?php echo esc_url(get_theme_file_uri('/images/mainvisual3.jpg')); ?>" alt="" class="fade-slide">
   </div>
 
-
   <!-- New Arrival -->
   <section id="arrival" class="arrival">
     <h2 class="sec-title tween-animate-title">NEW ARRIVAL</h2>
@@ -16,15 +15,20 @@
     <!-- swiper.js-->
     <div class="swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('/images/newarrival1.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
-        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('/images/newarrival2.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
-        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('/images/newarrival3.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
-        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('/images/newarrival4.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
-        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('/images/newarrival5.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
-        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('/images/newarrival6.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
-        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('/images/newarrival7.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
-        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('/images/newarrival8.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
-        <div class="swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('/images/newarrival9.jpg')); ?>" alt="ピックアップ１ テキストテキスト"></div>
+        <?php
+          $args = array(
+            'post_type' => 'products',
+            'posts_per_page' => 5
+          );
+        ?>
+        <?php $posts = get_posts($args); ?>
+        <?php foreach($posts as $post): ?>
+          <?php setup_postdata($post); ?>
+          <div class="swiper-slide">
+            <img src="<?php the_post_thumbnail_url('full'); ?>" alt="ピックアップ">
+          </div>
+        <?php endforeach; ?>
+        <?php wp_reset_postdata(); ?>
       </div>
     </div>
   </section>
