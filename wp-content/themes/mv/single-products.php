@@ -34,6 +34,8 @@
                 <dd><?php echo esc_html(get_post_meta(get_the_ID(), 'size', true)); ?></dd>
                 <dt>COLOR：</dt>
                 <dd><?php echo esc_html(get_post_meta(get_the_ID(), 'color', true)); ?></dd>
+                <dt>FOR：</dt>
+                <dd><?php echo esc_html(get_post_meta(get_the_ID(), 'gender', true)); ?></dd>
               </dl>
               <?php if($prev_post || $next_post): ?>
                 <nav class="article__nav">
