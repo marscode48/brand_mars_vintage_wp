@@ -240,7 +240,15 @@ Products
 
   &__btn {
     text-align: center;
-    margin: 50px 0;
+    margin-top: 80px;
+
+    a {
+      display: block;
+    }
+
+    .btn {
+      margin: 0 auto;
+    }
   }
 
   .pagination {

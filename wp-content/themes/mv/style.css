@@ -1070,7 +1070,15 @@ Products
 
 .products__btn {
   text-align: center;
-  margin: 50px 0;
+  margin-top: 80px;
+}
+
+.products__btn a {
+  display: block;
+}
+
+.products__btn .btn {
+  margin: 0 auto;
 }
 
 .products .pagination {
@@ -1534,10 +1542,6 @@ Footer
   }
   .products__content {
     padding: 16px;
-  }
-  .products__btn {
-    text-align: center;
-    margin: 30px 0;
   }
   .products .pagination ul li {
     margin: 0 10px;
