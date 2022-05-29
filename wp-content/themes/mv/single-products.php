@@ -59,7 +59,7 @@
       <?php endwhile; ?>
     <?php endif; ?>
     <div class="article__btn appear up">
-      <a href="<?php echo esc_url(home_url('/category/products/')); ?>">
+      <a href="<?php echo esc_url(home_url('/products/')); ?>">
         <button class="btn slide-bg item">Back To Products</button>
       </a>
     </div>
