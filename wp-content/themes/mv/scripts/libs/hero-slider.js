@@ -2,7 +2,6 @@ class HeroSlider {
   constructor(el) {
     this.el = el;
     this.swiper = this._initSwiper();
-    console.log(this.swiper)
   }
 
   _initSwiper () {

@@ -16,8 +16,6 @@ class Main {
   }
 
   _inviewAnimation(el, inview) {
-    console.log(el)
-    console.log(inview)
     if(inview) {
       el.classList.add('inview');
     }

@@ -1,6 +1,5 @@
 class ScrollObserver {
   constructor(els, cb, options) {
-    console.log(cb)
     this.els = document.querySelectorAll(els);
     const defaultOptions = {
       root: null,
@@ -15,13 +14,10 @@ class ScrollObserver {
   }
   _init() {
     const callback = function (entries, observer) {
-      console.log(entries)
-      console.log(observer)
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           this.cb(entry.target, true);
           if(this.once) {
-            console.log(this.once)
             observer.unobserve(entry.target);
           }
         } else {
