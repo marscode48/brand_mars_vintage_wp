@@ -833,7 +833,7 @@ li {
 }
 
 /* 共通クラス */
-.wrapper, .header__inner, .products, .article, .page, .contact, .footer {
+.wrapper, .header__inner, .products, .article, .page, .contact, .not-found, .footer {
   width: 90%;
   margin: 0 auto;
   max-width: 1240px;
@@ -1326,6 +1326,17 @@ contact form
   border: none !important;
   margin: 0 !important;
   padding: 0 !important;
+}
+
+/*-------------------------------------------
+404 エラーページ
+-------------------------------------------*/
+.not-found {
+  padding: 60px 0;
+}
+
+.not-found__url {
+  padding: 15px 0;
 }
 
 /*-------------------------------------------
