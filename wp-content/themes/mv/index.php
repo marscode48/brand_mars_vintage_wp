@@ -41,7 +41,7 @@
       <?php
         $args = array(
           'post_type' => 'products',
-          'posts_per_page' => 9
+          'posts_per_page' => 6
         );
       ?>
       <?php $posts = get_posts($args); ?>
