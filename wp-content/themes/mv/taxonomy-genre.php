@@ -30,6 +30,12 @@
         pagination($wp_query->max_num_pages);
       }
     ?>
+
+    <div class="products__btn appear up">
+      <a href="<?php echo esc_url(home_url('/products/')); ?>">
+        <button class="btn slide-bg item">Back To Products</button>
+      </a>
+    </div>
   </section>
 </main>
 
