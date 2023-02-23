@@ -1,0 +1,38 @@
+.fade-slide {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  object-fit: cover;
+  height: calc(100vh - 80px);
+
+  @include animation(
+    $name: kf-fade-slide,
+    $duration: 15s,
+    $iteration-count: infinite
+  );
+
+  // -5sとして1枚目の画像をすぐに実行
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) {
+      animation-delay: ($i * 5s)-5s;
+    }
+  }
+}
+
+@keyframes kf-fade-slide {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

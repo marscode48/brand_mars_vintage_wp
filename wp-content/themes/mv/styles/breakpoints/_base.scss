@@ -1,0 +1,543 @@
+/******************************************************************
+
+Stylesheet: ベーススタイル
+
+******************************************************************/
+@charset "UTF-8";
+
+html {
+  font-size: 100%;
+}
+body {
+  font-family: 'Crimson Text', serif;
+  color: $cBlack;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+a {
+  color: $cBlack;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+li {
+  list-style: none;
+}
+
+
+/* 共通クラス */
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+  max-width: $contentMaxWidth;
+}
+.inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 0 100px;
+}
+.site-title {
+  line-height: 1px;
+  width: 200px;
+  
+  & a {
+    display: block;
+  }
+}
+.sec-title {
+  font-size: 2.25rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.page-title {
+  @extend .sec-title;
+  font-weight: normal;
+  text-align: left;
+}
+.main {
+  padding-top: $navHeight;
+}
+
+
+/* アイコン */
+.icon {
+  position: relative;
+
+  @include p-base($left: -1.25em, $top: 50%, $width: 1em, $height: 1em) {
+    transform: translateY(-50%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &.twitter {
+    &::before {
+      background-image: url(images/twitter.svg);
+    }
+  }
+
+  &.facebook {
+    &::before {
+      background-image: url(images/facebook.svg);
+    }
+  }
+
+  &.instagram {
+    &::before {
+      background-image: url(images/instagram.svg);
+    }
+  }
+}
+
+  
+/*-------------------------------------------
+ヘッダー
+-------------------------------------------*/
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  background-color: $cWhite;
+
+  &__inner {
+    @extend .wrapper;
+    height: $navHeight;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &.triggered {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 10px 0 25px -10px rgba(0, 0, 0, 0.8);
+
+    & .header__sns {
+      transform: translateY(-25px);
+      opacity: 1;
+
+      & li a {
+        pointer-events: auto;
+      }
+    }
+  }
+
+  &__nav {
+    display: block;
+    position: relative;
+
+    .mobile-logo, .mobile-ul, .mobile-sns {
+      display: none;
+    }
+  }
+
+  &__ul {
+    display: flex;
+
+    & li {
+      margin-left: 20px;
+      line-height: 1;
+    }
+  }
+
+  &__sns {
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    font-size: 0.7rem;
+    opacity: 0;
+    transition: all .3s ease-in;
+    
+    & li {
+      margin-left: 30px;
+      line-height: 1;
+
+      & a {
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__btn {
+    display: none;
+  }
+}
+
+#mask {
+  display: none;
+}
+
+/*-------------------------------------------
+メインビジュアル
+-------------------------------------------*/
+.mainvisual {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: calc(100vh - 80px);
+}
+
+/*-------------------------------------------
+Arrival
+-------------------------------------------*/
+.arrival {
+  width: 100%;
+  padding: 100px 0 50px 0;
+  
+  &__list {
+    font-size: 0;
+
+    li {
+      padding: 0 30px;
+    }
+  }
+}
+
+/*-------------------------------------------
+Products
+-------------------------------------------*/
+.products {
+  @extend .wrapper;
+  padding: 50px 16px;
+
+  &__grid {
+    display: grid;
+    gap: 26px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  &__item {
+    box-shadow: 6px 6px 10px 4px $cItemShadow;
+  }
+
+  & img {
+    vertical-align: top;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  &__content {
+    padding: 30px;
+  }
+
+  &__category {
+    font-size: 0.75rem;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    font-size: 0.75rem;
+    text-align: right;
+  }
+
+  &__btn {
+    text-align: center;
+    margin-top: 80px;
+
+    a {
+      display: block;
+    }
+
+    .btn {
+      margin: 0 auto;
+    }
+  }
+
+  .pagination {
+    margin-top: 80px;
+
+    & ul {
+      display: flex;
+      justify-content: center;
+
+      & li {
+        font-size: 1.25rem;
+        margin: 0 20px;
+        
+        & a {
+          display: block;
+        }
+        
+        &.active {
+          border-bottom: 1px solid $cBlack;
+        }
+      }
+    }
+  }
+}
+
+/*-------------------------------------------
+Article
+-------------------------------------------*/
+.article {
+  @extend .wrapper;
+
+  &__inner {
+    @extend .inner;
+  }
+
+  &__img {
+    width: 50%;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__text {
+    width: 42%;
+
+    & p {
+      margin-bottom: 30px;
+      text-align: justify;
+    }
+  }
+
+  &__cat {
+    display: flex;
+    margin-bottom: 15px;
+
+    & span {
+      margin: 0 5px;
+    }
+  }
+
+  &__dl {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+
+    & dt {
+      width: 30%;
+    }
+    
+    & dd {
+      width: 70%;
+    }
+  }
+
+  &__nav {
+    position: relative;
+
+    & a {
+      font-weight: bold;
+      position: absolute;
+      top: 0;
+    }
+
+    & .prev-link {
+      right: 0px;
+    }
+    
+    & .next-link {
+      left: 0px;
+    }
+  }
+
+  &__btn {
+    text-align: center;
+  }
+}
+
+/*-------------------------------------------
+About, Company
+-------------------------------------------*/
+.page {
+  @extend .wrapper;
+
+  &__inner {
+    @extend .inner;
+  }
+
+  &__img {
+    width: 50%;
+
+    img {
+      vertical-align: bottom;
+    }
+  }
+
+  &__text {
+    width: 50%;
+    padding: 0 8%;
+
+    & .page-title {
+      position: relative;
+      margin-bottom: 0;
+
+      @include p-base(
+        $display: block,
+        $width: 100px,
+        $height: 1px,
+        $top: 50%,
+        $left: -120px
+      ) {
+        background-color: $cBlack;
+        transform: translateY(-50%) scaleX(0);
+        transition: transform 0.3s ease 1s;
+        transform-origin: right;
+      }
+    }
+
+    & .ja {
+      display: inline-block;
+      margin-bottom: 25px;
+    }
+
+    &.inview {
+      & .page-title::before {
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+.about {
+  p {
+    margin-bottom: 30px;
+    text-align: justify;
+  } 
+}
+
+.company {
+  & dl {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+    & dt {
+      width: 30%;
+      border-bottom: solid 1px $cBorderGray;
+      padding: 20px 10px;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
+    
+    & dd {
+      width: 70%;
+      border-bottom: solid 1px $cBorderGray;
+      padding: 20px 10px;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.map {
+  filter: grayscale(1);
+
+  & iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+  }
+}
+
+
+/*-------------------------------------------
+contact form
+-------------------------------------------*/
+.contact {
+  @extend .wrapper;
+
+  & {
+    .page-title {
+      text-align: center;
+    }
+
+    input, textarea {
+      width: 100%;
+      border: solid 1px $cBlack;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+      padding: 15px 0;
+      position: relative;
+      display: inline-block;
+      background-color: $cWhite;
+      border: 1px solid $cBlack;
+      font-weight: 600;
+      padding: 15px 0;
+      cursor: pointer;
+      transition: all 0.3s;
+      color: $cBlack;
+      text-decoration: none !important;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: $cBlack;
+      color: $cWhite;
+      box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .wpcf7-not-valid-tip {
+      margin-bottom: 10px !important;
+    }
+
+    .wpcf7-spinner {
+      display: none !important;
+    }
+
+    .wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output {
+      color: #dc3232 !important;
+    }
+
+    .wpcf7 form .wpcf7-response-output {
+      border: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+}
+
+/*-------------------------------------------
+404 エラーページ
+-------------------------------------------*/
+.not-found {
+  @extend .wrapper;
+  padding: 60px 0;
+
+  &__url {
+    padding: 15px 0;
+  }
+}
+
+
+/*-------------------------------------------
+Footer
+-------------------------------------------*/
+.footer {
+  @extend .wrapper;
+  padding: 60px 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  
+  &__logo {
+    @extend .site-title
+  }
+  
+  &__ul {
+    display: flex;
+    font-size: 0.75rem;
+
+    & li {
+      margin: 10px 30px 0 0;
+    }
+  }
+}
